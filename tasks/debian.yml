@@ -1,0 +1,26 @@
+---
+- name: debian | Installing Pre-Reqs
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+  - default-jre-headless
+
+- name: debian | Adding Rudder Repo Key
+  apt_key:
+    url: https://www.rudder-project.org/apt-repos/rudder_apt_key.pub
+    state: present
+  become: true
+
+- name: debian | Adding Rudder Repo
+  apt_repository:
+    repo: "deb http://www.rudder-project.org/apt-4.3/ {{ ansible_distribution_release }} main"
+    state: present
+  become: true
+
+- name: debian | Installing Rudder Root Server
+  apt:
+    name: rudder-server-root
+    state: present
+  become: true
