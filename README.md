@@ -1,7 +1,9 @@
 > [!CAUTION]
 > **This project is archived and no longer maintained.**
 > Archived: 2026-03-26
-> Reason: Low community usage; no longer maintained# ansible-rudder
+> Reason: Low community usage; no longer maintained
+
+# ansible-rudder
 
 Ansible role to install/configure [Rudder](https://www.rudder.io/en/)
 
